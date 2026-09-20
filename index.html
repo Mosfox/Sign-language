@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thai Sign Language AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤟 Thai Sign Language AI</h1>
+            <p>ระบบตรวจจับภาษามือไทย</p>
+        </header>
+        <!-- กล้อง -->
+        <section class="card">
+            <div class="camera-header">
+                <h2>📷 กล้องตรวจจับมือ</h2>
+                <span id="status" class="status off">
+                    ● OFF
+                </span>
+            </div>
+            <div class="camera-container">
+                <video
+                    id="video"
+                    autoplay
+                    playsinline>
+                </video>
+                <canvas id="canvas"></canvas>
+            </div>
+            <div class="button-group">
+                <button id="startButton">
+                    📷 เปิดกล้อง
+                </button>
+                <button id="stopButton" disabled>
+                    ⏹ หยุดการทำงาน
+                </button>
+            </div>
+        </section>
+        <!-- ท่าภาษามือ -->
+        <section class="card">
+            <h2>🤟 ท่าภาษามือที่ตรวจพบ</h2>
+            <div id="sign">
+                -
+            </div>
+        </section>
+        <!-- ประโยค -->
+        <section class="card">
+            <h2>💬 ประโยค</h2>
+            <div id="sentence">
+                -
+            </div>
+            <div class="sentence-buttons">
+                <button id="speakButton">
+                    🔊 อ่านออกเสียง
+                </button>
+                <button id="clearButton">
+                    🗑 ล้าง
+                </button>
+            </div>
+        </section>
+        <!-- ประวัติคำ -->
+        <section class="card">
+            <h2>📝 คำที่ตรวจพบ</h2>
+            <div id="wordHistory">
+                ยังไม่มีคำ
+            </div>
+        </section>
+    </div>
+    <!-- MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+    <!-- JavaScript ของเรา -->
+    <script src="script.js"></script>
+</body>
+</html>
+
+>

@@ -1,0 +1,197 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+ 
+body {
+    font-family: Arial, "Noto Sans Thai", sans-serif;
+    background: #f2f4f7;
+    color: #222;
+    padding: 20px;
+}
+ 
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+}
+ 
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+ 
+header h1 {
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+ 
+header p {
+    color: #666;
+    font-size: 16px;
+}
+ 
+/* Card */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+ 
+/* Camera Header */
+.camera-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+ 
+/* Status */
+.status {
+    font-weight: bold;
+}
+ 
+.status.off {
+    color: red;
+}
+ 
+.status.on {
+    color: green;
+}
+ 
+/* Camera */
+.camera-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+}
+ 
+/* Video (พลิกเป็นภาพมิเรอร์) */
+#video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    transform: scaleX(-1);
+}
+ 
+/* Canvas (ห้ามพลิกใน CSS เพราะ script.js พลิกพิกัดเองแล้ว) */
+#canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+ 
+/* Buttons */
+.button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+ 
+button {
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 17px;
+    cursor: pointer;
+    background: #1976d2;
+    color: white;
+}
+ 
+button:disabled {
+    background: #999;
+    cursor: not-allowed;
+}
+ 
+#stopButton {
+    background: #b00020;
+}
+ 
+/* Sign */
+#sign {
+    background: #f5f5f5;
+    border-radius: 12px;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+ 
+/* Sentence */
+#sentence {
+    background: #f5f5f5;
+    border-radius: 12px;
+    min-height: 100px;
+    padding: 25px;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+ 
+/* Sentence Buttons */
+.sentence-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+}
+ 
+#speakButton {
+    background: #388e3c;
+}
+ 
+#clearButton {
+    background: #757575;
+}
+ 
+/* Word History */
+#wordHistory {
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 50px;
+    margin-top: 15px;
+    font-size: 18px;
+}
+ 
+/* Mobile */
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+ 
+    header h1 {
+        font-size: 25px;
+    }
+ 
+    .button-group {
+        grid-template-columns: 1fr;
+    }
+ 
+    .sentence-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+ 
